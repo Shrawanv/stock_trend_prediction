@@ -93,7 +93,7 @@ plt.ylabel('Price')
 plt.legend()
 st.pyplot(fig2)
 
-from streamlit_plotly_events import plotly_events
+# from streamlit_plotly_events import plotly_events
 
 # fig = px.line(x = [1], y = [1])
 # selected_points = plotly_events(fig)
