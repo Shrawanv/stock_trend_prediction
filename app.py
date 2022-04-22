@@ -88,7 +88,7 @@ valid['Predictions'] = predictions
 
 #Visualize the data
 st.subheader('Prediction Price with compare to Original Price')
-fig2 = plt.figure(figsize = (16,8))
+fig2 = plt.figure(figsize = (12,6))
 plt.title('Model')
 plt.xlabel('Date', fontsize = 18)
 plt.ylabel('Close Price in INR', fontsize = 18)
