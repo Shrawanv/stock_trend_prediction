@@ -10,7 +10,7 @@ The project's main objective was to create and test the following method of comp
 ##  Dataset
 We are fetching data from yahoo finance website using its public api.
 To use this public api simply install yfinance using pip and import into your project.
-to install yfinance using pip open command prompt and type `pip install yfinance`
+to install yfinance using pip type `pip install yfinance`
 
 
 ## Project Demo
