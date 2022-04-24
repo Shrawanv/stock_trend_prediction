@@ -11,3 +11,7 @@ The project's main objective was to create and test the following method of comp
 We are fetching data from yahoo finance website using its public api.
 To use this public api simply install yfinance using pip and import into your project.
 to install yfinance using pip open command prompt and type `pip install yfinance`
+
+
+## Project Demo
+Experience Demo here:  [Stock Price and Trend Prediction Tool](https://bit.ly/3rMDC0N "Stock Price and Trend Prediction Tool")
