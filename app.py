@@ -100,10 +100,11 @@ def get_next_prediction(data, model):
 def show_prediction(ticker_name, pred_price, info):
   # ticker_name = ticker_name.split(".")[0]
   ticker_name = info['longName']
+  currency = info['financialCurrency']
   pred_price = pred_price[0][0]
   next_date = dt.date.today() + dt.timedelta(days = 1)
   st.subheader(f'Predicted Price for {ticker_name}:')
-  st.write(f"price prediction for {ticker_name} on {next_date} is \u20B9{pred_price:.2f}")
+  st.write(f"price prediction for {ticker_name} on {next_date} is {pred_price:.2f} {currency}")
 
 
 try:
