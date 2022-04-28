@@ -26,7 +26,7 @@ exchange_selection = st.selectbox(
   ('NSE', 'BSE', 'Other')
 
 )
-stock_abbr = {'NSE':'.NS', 'BSE':'.BO'}
+stock_abbr = {'NSE':'.NS', 'BSE':'.BO', 'Other':''}
 ticker_name = ticker_name + stock_abbr[exchange_selection]
 
 ticker = yf.Ticker(ticker_name)
