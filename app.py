@@ -1,5 +1,3 @@
-
-
 # import libraries
 from ast import Try
 import math
@@ -12,6 +10,7 @@ import yfinance as yf
 import datetime as dt
 import streamlit as st
 import matplotlib.pyplot as plt
+from tickerAttributes import info
 
 model = load_model('keras_modelv2.h5')
 
@@ -30,20 +29,24 @@ stock_abbr = {'NSE':'.NS', 'BSE':'.BO', 'Other':''}
 ticker_name = ticker_name + stock_abbr[exchange_selection]
 
 ticker = yf.Ticker(ticker_name)
-info = ticker.info
+# info = ticker.info
+info = info(ticker_name)
+
 df = ticker.history(start = START_DATE, end = END_DATE)
 
 def ticker_attributes(info):
   companyName = info['longName']
-  country = info['country']
-  website = info['website']
+  timeZone = info['timeZoneFullName']
+#   website = info['website']
   current_price = info['currentPrice']
   previous_close = info['previousClose']
-  financial_currency = info['financialCurrency']
+  financial_currency = info['currency']
+  dayHigh = info['dayHigh']
 
   st.write(f"Name of Company: {companyName}")
-  st.write(f'country: {country}')
-  st.write(f'Official Website: {website}')
+  st.write(f'Time Zone: {timeZone}')
+#   st.write(f'Official Website: {website}')
+  st.write(f'Day high: {dayHigh}')
   st.write(f'Previous close: {previous_close} {financial_currency}')
   st.write(f'current Price: {current_price} {financial_currency}')
 
@@ -100,7 +103,7 @@ def get_next_prediction(data, model):
 def show_prediction(ticker_name, pred_price, info):
   # ticker_name = ticker_name.split(".")[0]
   ticker_name = info['longName']
-  currency = info['financialCurrency']
+  currency = info['currency']
   pred_price = pred_price[0][0]
   next_date = dt.date.today() + dt.timedelta(days = 1)
   st.subheader(f'Predicted Price for {ticker_name}:')
