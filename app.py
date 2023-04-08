@@ -19,7 +19,7 @@ START_DATE = '2008-01-01'
 END_DATE = str(dt.datetime.now().strftime('%Y-%m-%d'))
 
 # Get the stock quote
-ticker_name = st.text_input('Enter Stock Ticker')
+ticker_name = st.text_input('Enter Stock Ticker').upper()
 exchange_selection = st.selectbox(
   'Select Stock Exchange',
   ('NSE', 'BSE', 'Other')
