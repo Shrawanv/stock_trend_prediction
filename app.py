@@ -1,5 +1,3 @@
-
-
 # import libraries
 from ast import Try
 import math
